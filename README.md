@@ -53,6 +53,6 @@ Utilize credenciais administrativas para operações protegidas:
 
 ```text
 Usuário: admin
-Senha: Admin@123
+Senha: admin
 ```
 
