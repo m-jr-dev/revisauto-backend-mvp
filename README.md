@@ -1,73 +1,58 @@
-# RevisAuto - Back-end (API Flask)
+# 📦 RevisAuto Backend MVP
 
-Este é o back-end do MVP de um sistema web desenvolvido com Python + Flask. O sistema permite cadastrar, buscar, listar e deletar usuários utilizando API RESTful com documentação via Swagger. Utiliza banco de dados SQLite.
+**RevisAuto Backend** é uma API RESTful construída com Flask e SQLite para gerenciar manutenções de veículos, focando em troca de óleo e filtros.
 
-## 🚀 Tecnologias utilizadas
+---
 
-- Python 3.10+
-- Flask
-- Flask-SQLAlchemy
-- Flask-Cors
-- SQLite
-- Swagger (OpenAPI via flasgger)
+## 📝 Requisitos
 
-## 📦 Instalação e execução
+- Python 3.8 ou superior  
+- pip  
+- Git  
 
-### 1. Clone o repositório
+---
+
+## ⚙️ Instalação
 
 ```bash
 git clone https://github.com/m-jr-dev/revisauto-backend-mvp.git
-cd backend-mvp
-```
-
-### 2. Crie um ambiente virtual (opcional, mas recomendado)
-
-```bash
+cd revisauto-backend-mvp
 python -m venv venv
-source venv/bin/activate  # Linux/Mac
-venv\Scripts\activate     # Windows
-```
-
-### 3. Instale as dependências
-
-```bash
+source venv/bin/activate       # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 4. Execute a aplicação
+---
+
+## 🚀 Uso
 
 ```bash
-python app.py
+export FLASK_APP=app.py        # Windows: set FLASK_APP=app.py
+flask run
 ```
 
-A API estará disponível em: `http://localhost:5000`
-
-### 5. Acesse a documentação Swagger
-
-Abra no navegador:
-
-```
-http://localhost:5000/apidocs/
-```
+- Acesse a API em: `http://localhost:5000/`
+- Documentação OpenAPI (Swagger): `http://localhost:5000/apidocs/`
 
 ---
 
-## 🧪 Rotas disponíveis
+## 🔗 Endpoints Principais
 
-- `POST /cadastrar_usuario`
-- `GET /buscar_usuario/<id>`
-- `GET /buscar_usuarios`
-- `DELETE /deletar_usuario/<id>`
+| Método | Rota               | Descrição                |
+|--------|--------------------|--------------------------|
+| POST   | `/usuarios`        | Criar novo usuário       |
+| GET    | `/usuarios`        | Obter lista de usuários  |
+| POST   | `/manutencoes`     | Registrar manutenção     |
+| GET    | `/manutencoes`     | Obter lista de manutenções |
 
 ---
 
-## 📁 Estrutura de arquivos
+## 🔒 Autenticação
 
+Utilize credenciais administrativas para operações protegidas:
+
+```text
+Usuário: admin
+Senha: Admin@123
 ```
-backend/
-├── app.py
-├── models.py
-├── database.db
-├── requirements.txt
-└── README.md
-```
+
